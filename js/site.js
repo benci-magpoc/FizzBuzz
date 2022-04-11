@@ -31,28 +31,35 @@ function clearList() {
 function fizzBuzzAlgorithm(fizz, buzz, start, end) {
 
     let fbValues = [];
+    let fizzBuzzCount = {
+        fizz: 0,
+        buzz: 0,
+        fizzBuzz: 0
+    };
 
     for (let i = start; i <= end; i++) {
 
         if (i % fizz == 0 && i % buzz == 0) {
 
             fbValues.push('FizzBuzz');
+            fizzBuzzCount.fizzBuzz++;
 
         } else if (i % fizz == 0) {
 
             fbValues.push('Fizz');
+            fizzBuzzCount.fizz++;
 
         } else if (i % buzz == 0) {
 
             fbValues.push('Buzz');
-
+            fizzBuzzCount.buzz++;
         } else {
 
             fbValues.push(i);
-
         }
     }
-
+    console.log(fizzBuzzCount);
+    displayFizzBuzzCount(fizzBuzzCount);
     return fbValues;
 }
 
@@ -77,32 +84,10 @@ function displayValues(fizzBuzzDisplayed) {
         element.appendChild(item);
 
     });
+}
 
-    // for (let i = 1; i <= fizzBuzzDisplayed.length; i++) {
-
-    //     let item = document.createElement("div");
-
-    //     //set the items to the div
-    //     item.classList.add("col-12");
-    //     item.classList.add("col-md-2");
-    //     item.innerHTML = i;
-
-    //     if (i % firstDigit == 0 && i % secondDigit == 0) {
-    //         item.classList.add("pinkColor");
-    //         item.classList.add("boldItem");
-    //         item.innerHTML = "";
-    //         item.innerHTML += "FizzBuzz";
-    //     } else if (i % firstDigit == 0) {
-    //         item.classList.add("messageClass");
-    //         item.innerHTML = "";
-    //         item.innerHTML += "Fizz";
-    //     } else if (i % secondDigit == 0) {
-    //         item.classList.add("messageClass");
-    //         item.innerHTML = "";
-    //         item.innerHTML += "Buzz";
-    //     }
-
-    //     element.appendChild(item);
-
-    // }
+function displayFizzBuzzCount(fizzBuzzCount) {
+    document.getElementById("fizzCount").innerHTML += fizzBuzzCount.fizz;
+    document.getElementById("buzzCount").innerHTML += fizzBuzzCount.buzz;
+    document.getElementById("fizzBuzzCount").innerHTML += fizzBuzzCount.fizzBuzz;
 }
