@@ -86,6 +86,15 @@ footer img:hover {
     font-size: 1rem;
 }
 
+.pinkColor {
+    color: pink !important;
+    font-size: 1.5rem;
+}
+
+.boldItem {
+    font-weight: bolder;
+}
+
 @media (min-width: 575.98px) {
     .techIcons {
         font-size: 5rem;

@@ -1,29 +1,67 @@
-function getMessage() {
-    let message = document.getElementById("txtMessage").value;
-    displayMessage(message);
+function getValues() {
+    let firstNumber = document.getElementById("firstNumber").value;
+    let secondNumber = document.getElementById("secondNumber").value;
+
+    displayValues(parseInt(firstNumber), parseInt(secondNumber));
 }
 
 
-function displayMessage(message) {
+function displayValues(firstDigit, secondDigit) {
 
-    // let item = `<li class="list-group-item">${message}</li>`;
-
-    // getting ol element from the page
     element = document.getElementById("results");
 
-    // create a new li element
-    let item = document.createElement("li");
-    //add class to the element
-    item.classList.add("list-group-item");
-    item.classList.add("messageClass");
 
-    //set the message for the li element
-    item.innerHTML = message;
-    // add new item to list
-    element.appendChild(item);
+    for (let i = 1; i < 101; i++) {
 
+        let item = document.createElement("div");
 
-    // element.insertAdjacentHTML("beforeend", item);
-    let clearForm = document.getElementById("txtMessage");
-    clearForm.innerHTML = "";
+        //set the items to the div
+        item.classList.add("col-12");
+        item.classList.add("col-md-2");
+        item.innerHTML = i;
+
+        if (i % firstDigit == 0 && i % secondDigit == 0) {
+            item.classList.add("pinkColor");
+            item.classList.add("boldItem");
+            item.innerHTML = "";
+            item.innerHTML += "FizzBuzz";
+        } else if (i % firstDigit == 0) {
+            item.classList.add("messageClass");
+            item.innerHTML = "";
+            item.innerHTML += "Fizz";
+        } else if (i % secondDigit == 0) {
+            item.classList.add("messageClass");
+            item.innerHTML = "";
+            item.innerHTML += "Buzz";
+        }
+
+        element.appendChild(item);
+
+    }
+    //fizz = 3
+    //Buzz = 5
+
+    //display a list of numbers from 1 to 100
+
+    //write a for loop to display from 1 to 100
+
+    //for each number do the following:
+    //test if they are divisible by fizz and buzz
+    //if true replace the current number with 'FIZZBUZZ'
+
+    //test if they are ONLY divisible by fizz
+    //if true replace currrent number with 'FIZZ'
+
+    //test if they are ONLY divisible by buzz
+    //if true replace current number with 'BUZZ'
+
+    //finally just print the number
+
+    //display the number or string on the page. Hint: Link Hundo!
+
+}
+
+function clearList() {
+    document.getElementById("results").innerHTML = "";
+
 }
