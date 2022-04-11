@@ -77,36 +77,49 @@
                         a multiple of the first number input, it will display fizz. Also if the second number input is a
                         multiple of it, it will display Buzz. FizzBuzz is displayed when both numbers are multiple of
                         the result.</p>
+                    <hr>
                     <h2>Instructions</h2>
                     <hr>
                     <p>Enter first and seond number values.
                     </p>
-                    <hr>
                 </div>
 
-                <div class="row">
+                <div class="row pb-3">
                     <div class="col">
-                        <label class="form-label fw-bold" for="firstNumber">Enter first number</label>
+                        <label class="form-label fw-bold" for="firstNumber">Fizz</label>
                         <input class="form-control" type="number" id="firstNumber" value="3">
                     </div>
                     <div class="col">
-                        <label class="form-label fw-bold" for="secondNumber">Enter second number</label>
+                        <label class="form-label fw-bold" for="secondNumber">Buzz</label>
                         <input class="form-control" type="number" id="secondNumber" value="5">
                     </div>
                 </div>
 
+                <p>Enter starting and ending values.
+                </p>
+
+                <div class="row">
+                    <div class="col">
+                        <label class="form-label fw-bold" for="startValue">Enter beginning value</label>
+                        <input class="form-control" type="number" id="startValue" value="1">
+                    </div>
+                    <div class="col">
+                        <label class="form-label fw-bold" for="endValue">Enter end value</label>
+                        <input class="form-control" type="number" id="endValue" value="100">
+                    </div>
+                </div>
+
+
                 <div class="row-col-1 row-cols-md-1 text-end">
-                    <div class="col p-5">
+                    <div class="col my-5 px-5">
                         <button id="btnClear" class="btn btn-md btn-primary">Clear</button>
                         <button id="btnSubmit" class="btn btn-md btn-primary">FizzBuzz!</button>
                     </div>
 
                 </div>
-                <h2 class="mt-3 border bg-dark text-light">The results:</h2>
-                <div class="row mt-5" id="fizzBuzzResult">
-                    <div id="results" class="row">
-                        <!-- Items will go here -->
-                    </div>
+                <h2 class="p-3 border-light bg-dark text-light">The results:</h2>
+                <div id="results" class="row d-flex justify-content-center">
+                    <!-- Items will go here -->
                 </div>
             </div>
         </div>

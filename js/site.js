@@ -1,67 +1,108 @@
 function getValues() {
     let firstNumber = document.getElementById("firstNumber").value;
     let secondNumber = document.getElementById("secondNumber").value;
+    let startValue = document.getElementById("startValue").value;
+    let endValue = document.getElementById("endValue").value;
 
-    displayValues(parseInt(firstNumber), parseInt(secondNumber));
-}
+    firstNumber = parseInt(firstNumber);
+    secondNumber = parseInt(secondNumber);
+    startValue = parseInt(startValue);
+    endValue = parseInt(endValue);
 
+    if (Number.isInteger(firstNumber) && Number.isInteger(secondNumber)) {
 
-function displayValues(firstDigit, secondDigit) {
+        //assign fizzBuzzAlgorithm return value to fizzBuzzValues
+        let fizzBuzzValues = fizzBuzzAlgorithm(firstNumber, secondNumber, startValue, endValue);
+        //display the values
+        displayValues(fizzBuzzValues);
 
-    element = document.getElementById("results");
-
-
-    for (let i = 1; i < 101; i++) {
-
-        let item = document.createElement("div");
-
-        //set the items to the div
-        item.classList.add("col-12");
-        item.classList.add("col-md-2");
-        item.innerHTML = i;
-
-        if (i % firstDigit == 0 && i % secondDigit == 0) {
-            item.classList.add("pinkColor");
-            item.classList.add("boldItem");
-            item.innerHTML = "";
-            item.innerHTML += "FizzBuzz";
-        } else if (i % firstDigit == 0) {
-            item.classList.add("messageClass");
-            item.innerHTML = "";
-            item.innerHTML += "Fizz";
-        } else if (i % secondDigit == 0) {
-            item.classList.add("messageClass");
-            item.innerHTML = "";
-            item.innerHTML += "Buzz";
-        }
-
-        element.appendChild(item);
-
+    } else {
+        alert("You muuse enter Integers!");
     }
-    //fizz = 3
-    //Buzz = 5
-
-    //display a list of numbers from 1 to 100
-
-    //write a for loop to display from 1 to 100
-
-    //for each number do the following:
-    //test if they are divisible by fizz and buzz
-    //if true replace the current number with 'FIZZBUZZ'
-
-    //test if they are ONLY divisible by fizz
-    //if true replace currrent number with 'FIZZ'
-
-    //test if they are ONLY divisible by buzz
-    //if true replace current number with 'BUZZ'
-
-    //finally just print the number
-
-    //display the number or string on the page. Hint: Link Hundo!
-
 }
+
 
 function clearList() {
     document.getElementById("results").innerHTML = "";
 
+}
+
+//business logic layer - Model
+function fizzBuzzAlgorithm(fizz, buzz, start, end) {
+
+    let fbValues = [];
+
+    for (let i = start; i <= end; i++) {
+
+        if (i % fizz == 0 && i % buzz == 0) {
+
+            fbValues.push('FizzBuzz');
+
+        } else if (i % fizz == 0) {
+
+            fbValues.push('Fizz');
+
+        } else if (i % buzz == 0) {
+
+            fbValues.push('Buzz');
+
+        } else {
+
+            fbValues.push(i);
+
+        }
+    }
+
+    return fbValues;
+}
+
+function displayValues(fizzBuzzDisplayed) {
+
+    element = document.getElementById("results");
+
+    fizzBuzzDisplayed.forEach(e => {
+        let item = document.createElement("div");
+        item.classList.add("col-lg-2");
+        item.classList.add("col-md-6");
+        item.classList.add("border");
+
+        if (e == 'FizzBuzz') {
+            item.classList.add("fizzBuzz");
+        } else if (e == 'Fizz') {
+            item.classList.add("fizz");
+        } else if (e == 'Buzz') {
+            item.classList.add('buzz');
+        }
+        item.innerHTML = e;
+        element.appendChild(item);
+
+    });
+
+    // for (let i = 1; i <= fizzBuzzDisplayed.length; i++) {
+
+    //     let item = document.createElement("div");
+
+    //     //set the items to the div
+    //     item.classList.add("col-12");
+    //     item.classList.add("col-md-2");
+    //     item.innerHTML = i;
+
+    //     if (i % firstDigit == 0 && i % secondDigit == 0) {
+    //         item.classList.add("pinkColor");
+    //         item.classList.add("boldItem");
+    //         item.innerHTML = "";
+    //         item.innerHTML += "FizzBuzz";
+    //     } else if (i % firstDigit == 0) {
+    //         item.classList.add("messageClass");
+    //         item.innerHTML = "";
+    //         item.innerHTML += "Fizz";
+    //     } else if (i % secondDigit == 0) {
+    //         item.classList.add("messageClass");
+    //         item.innerHTML = "";
+    //         item.innerHTML += "Buzz";
+    //     }
+
+    //     element.appendChild(item);
+
+    // }
 }
