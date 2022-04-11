@@ -2,7 +2,14 @@ function getValues() {
     let firstNumber = document.getElementById("firstNumber").value;
     let secondNumber = document.getElementById("secondNumber").value;
 
-    displayValues(parseInt(firstNumber), parseInt(secondNumber));
+    firstNumber = parseInt(firstNumber);
+    secondNumber = parseInt(secondNumber);
+
+    if (Number.isInteger(firstNumber) && Number.isInteger(secondNumber)) {
+        displayValues(firstNumber, secondNumber);
+    } else {
+        alert("You muuse enter Integers!");
+    }
 }
 
 
