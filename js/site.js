@@ -17,24 +17,27 @@ function displayValues(firstDigit, secondDigit) {
 
         //set the items to the div
         item.classList.add("col-12");
-        item.classList.add("col-md-3");
+        item.classList.add("col-md-2");
         item.innerHTML = i;
+
+        if (i % firstDigit == 0 && i % secondDigit == 0) {
+            item.classList.add("pinkColor");
+            item.classList.add("boldItem");
+            item.innerHTML = "";
+            item.innerHTML += "FizzBuzz";
+        } else if (i % firstDigit == 0) {
+            item.classList.add("messageClass");
+            item.innerHTML = "";
+            item.innerHTML += "Fizz";
+        } else if (i % secondDigit == 0) {
+            item.classList.add("messageClass");
+            item.innerHTML = "";
+            item.innerHTML += "Buzz";
+        }
+
         element.appendChild(item);
 
-        if (i % firstDigit == 0) {
-            item.classList.add("boldItem");
-            item.innerHTML += " Fizz";
-        }
-
-        if (i % secondDigit == 0) {
-            item.classList.add("boldItem");
-            item.innerHTML += " Buzz";
-        }
-
-
     }
-
-    element.appendChild()
     //fizz = 3
     //Buzz = 5
 
