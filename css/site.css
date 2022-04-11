@@ -95,6 +95,21 @@ footer img:hover {
     font-weight: bolder;
 }
 
+.fizzBuzz {
+    color: blueviolet;
+    font-weight: bold;
+}
+
+.fizz {
+    color: red;
+    font-weight: bold;
+}
+
+.buzz {
+    color: blue;
+    font-weight: bold;
+}
+
 @media (min-width: 575.98px) {
     .techIcons {
         font-size: 5rem;
