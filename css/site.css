@@ -86,6 +86,10 @@ footer img:hover {
     font-size: 1rem;
 }
 
+.boldItem {
+    font-weight: bolder;
+}
+
 @media (min-width: 575.98px) {
     .techIcons {
         font-size: 5rem;
