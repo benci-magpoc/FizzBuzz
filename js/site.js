@@ -63,14 +63,15 @@ function fizzBuzzAlgorithm(fizz, buzz, start, end) {
     return fbValues;
 }
 
+//View/Presentation layer
 function displayValues(fizzBuzzDisplayed) {
 
     element = document.getElementById("results");
 
     fizzBuzzDisplayed.forEach(e => {
         let item = document.createElement("div");
-        item.classList.add("col-lg-2");
-        item.classList.add("col-md-6");
+        // item.classList.add("col-lg-3");
+        item.classList.add("col-md-3");
         item.classList.add("border");
 
         if (e == 'FizzBuzz') {
