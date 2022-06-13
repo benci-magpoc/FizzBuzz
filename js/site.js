@@ -1,4 +1,6 @@
 function getValues() {
+    clearList();
+
     let firstNumber = document.getElementById("firstNumber").value;
     let secondNumber = document.getElementById("secondNumber").value;
     let startValue = document.getElementById("startValue").value;
@@ -88,9 +90,9 @@ function displayValues(fizzBuzzDisplayed) {
 }
 
 function displayFizzBuzzCount(fizzBuzzCount) {
-    document.getElementById("fizzCount").innerHTML += fizzBuzzCount.fizz;
-    document.getElementById("buzzCount").innerHTML += fizzBuzzCount.buzz;
-    document.getElementById("fizzBuzzCount").innerHTML += fizzBuzzCount.fizzBuzz;
+    document.getElementById("fizzCount").innerHTML = fizzBuzzCount.fizz;
+    document.getElementById("buzzCount").innerHTML = fizzBuzzCount.buzz;
+    document.getElementById("fizzBuzzCount").innerHTML = fizzBuzzCount.fizzBuzz;
 }
 
 //Algorithm using switch cases
